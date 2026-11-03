@@ -2,5 +2,7 @@
   "name": "ABECMED Watcher & Flow Inspector",
   "description": "Diagnóstico, reparo e monitoramento para o bot e catálogo da ABECMED com Typebot autodetectável.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -298,9 +298,6 @@ def collect(cpf, slug=None):
     if oils:
         sections.append("💧 OLEOS:\n" + "\n".join("  • %s" % o for o in oils))
 
-    if recipe_days:
-        sections.append("📋 Receita medica: valida por mais %s dias" % recipe_days)
-
     return "\n\n".join(sections)
 
 
