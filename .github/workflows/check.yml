@@ -24,14 +24,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      # Espalha o horario dentro da janela de 10 min
+      # Espalha o horario apenas no agendamento automatico (cron), rodando imediatamente no disparo manual
       - name: Jitter
+        if: github.event_name == 'schedule'
         run: sleep $((RANDOM % 300))
 
       - name: Rodar
         env:
           ABECMED_CPF: ${{ secrets.ABECMED_CPF }}
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || secrets.NFTY_TOPIC || secrets.TOPICO }}
         run: python3 bot.py
 
       - name: Salvar estado
